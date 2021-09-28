@@ -1,34 +1,12 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras">
-  
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <TargetFrameworks>net40;net45;netstandard1.3</TargetFrameworks>
-    <PackageId>SharpDX.DirectSound</PackageId>
-    <Product>SharpDX.DirectSound</Product>
-    <DocumentationFile Condition="'$(Configuration)' == 'Release'">bin\$(Configuration)\$(TargetFramework)\SharpDX.DirectSound.xml</DocumentationFile>
-    <AssemblyTitle>SharpDX.DirectSound</AssemblyTitle>
-    <Title>SharpDX.DirectSound</Title>
-    <Description>Assembly providing DirectX - DirectSound managed API.</Description>
-    <PackageTags>$(PackageTags) DirectSound DSound</PackageTags>
-    <SharpDXLegacy>true</SharpDXLegacy>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' OR  '$(TargetFramework)' == 'netcoreapp1.0' ">
-    <DefineConstants>$(DefineConstants);DESKTOP_APP</DefineConstants>
-    <SharpDXAppType>DESKTOP_APP</SharpDXAppType>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
-    <DefineConstants>$(DefineConstants);REFERENCE</DefineConstants>
-    <SharpDXAppType>REFERENCE</SharpDXAppType>
-  </PropertyGroup>
+
   <ItemGroup>
-    <None Include="Documentation\CodeComments.xml" />
-    <None Include="Mapping.xml" />
-    <Compile Include="..\SharedAssemblyInfo.cs">
-      <Link>Properties\SharedAssemblyInfo.cs</Link>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\SharpDX.Mathematics\SharpDX.Mathematics.csproj" />
     <ProjectReference Include="..\SharpDX\SharpDX.csproj" />
   </ItemGroup>
 
-  
 </Project>

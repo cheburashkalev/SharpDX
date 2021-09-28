@@ -43,7 +43,6 @@
 * THE SOFTWARE.
 */
 
-using System.Diagnostics;
 using SharpDX.Mathematics.Interop;
 using System;
 using System.ComponentModel;
@@ -100,8 +99,6 @@ namespace SharpDX.Windows
 
             ResizeRedraw = true;
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint, true);
-
-            Icon = Desktop.Properties.Resources.logo;
 
             previousWindowState = FormWindowState.Normal;
             AllowUserResizing = true;

@@ -43,7 +43,7 @@ namespace SharpDX.RawInput
         internal KeyboardInputEventArgs(ref RawInput rawInput, IntPtr hwnd)
             : base(ref rawInput, hwnd)
         {
-            Key = (Keys) rawInput.Data.Keyboard.VKey;
+            Key = (Keys)rawInput.Data.Keyboard.VKey;
             MakeCode = rawInput.Data.Keyboard.MakeCode;
             ScanCodeFlags = rawInput.Data.Keyboard.Flags;
             State = rawInput.Data.Keyboard.Message;
