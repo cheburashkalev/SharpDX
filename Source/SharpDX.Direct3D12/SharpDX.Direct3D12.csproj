@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Version>4.2.0.0</Version>
+    <Authors>Alexandre Mutel</Authors>
+    <Company>Alexandre Mutel</Company>
+    <Product>SharpDX.Direct3D12</Product>
+    <Copyright>Copyright (c) 2010-2016 Alexandre Mutel</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
