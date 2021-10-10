@@ -9421,6 +9421,15 @@ namespace SharpDX.Direct2D1
             SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, point0, point1, (void *)brush_, strokeWidth, (void *)strokeStyle_, (*(void ***)this._nativePointer)[15]);
         }
 
+        public unsafe void DrawLine(Engine.Mathematics.LinearAlgebra.Vector2 point0, Engine.Mathematics.LinearAlgebra.Vector2 point1, SharpDX.Direct2D1.Brush brush, System.Single strokeWidth, SharpDX.Direct2D1.StrokeStyle strokeStyle)
+        {
+            System.IntPtr brush_ = System.IntPtr.Zero;
+            System.IntPtr strokeStyle_ = System.IntPtr.Zero;
+            brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
+            strokeStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.StrokeStyle>(strokeStyle);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, point0, point1, (void*)brush_, strokeWidth, (void*)strokeStyle_, (*(void***)this._nativePointer)[15]);
+        }
+
         /// <summary>
         /// <p>Draws the outline of a rectangle that has the specified dimensions and stroke style. </p>
         /// </summary>

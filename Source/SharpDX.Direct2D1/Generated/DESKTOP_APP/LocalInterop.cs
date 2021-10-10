@@ -679,6 +679,11 @@ namespace SharpDX.Direct2D1
             throw null;
         }
 
+        public static unsafe void CalliStdCallvoid0(void* thisObject, Engine.Mathematics.LinearAlgebra.Vector2 param0, Engine.Mathematics.LinearAlgebra.Vector2 param1, void* param2, float param3, void* param4, void* methodPtr)
+        {
+            throw null;
+        }
+
         public static unsafe void CalliStdCallvoid(void *thisObject, void *param0, void *param1, float param2, void *param3, void *methodPtr)
         {
             throw null;

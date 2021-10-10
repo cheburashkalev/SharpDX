@@ -178,6 +178,11 @@ namespace SharpDX.Direct2D1
             DrawLine(point0, point1, brush, StrokeWidth, null);
         }
 
+        public void DrawLine(Engine.Mathematics.LinearAlgebra.Vector2 point0, Engine.Mathematics.LinearAlgebra.Vector2 point1, Brush brush)
+        {
+            DrawLine(point0, point1, brush, StrokeWidth, null);
+        }
+
         /// <summary>	
         /// Draws a line between the specified points. 	
         /// </summary>	
@@ -190,6 +195,11 @@ namespace SharpDX.Direct2D1
         /// <param name="strokeWidth">A value greater than or equal to 0.0f that specifies the width of the stroke. If this parameter isn't specified, it defaults to 1.0f.  The stroke is centered on the line. </param>
         /// <unmanaged>void ID2D1RenderTarget::DrawLine([None] D2D1_POINT_2F point0,[None] D2D1_POINT_2F point1,[In] ID2D1Brush* brush,[None] float strokeWidth,[In, Optional] ID2D1StrokeStyle* strokeStyle)</unmanaged>
         public void DrawLine(RawVector2 point0, RawVector2 point1, Brush brush, float strokeWidth)
+        {
+            DrawLine(point0, point1, brush, strokeWidth, null);
+        }
+
+        public void DrawLine(Engine.Mathematics.LinearAlgebra.Vector2 point0, Engine.Mathematics.LinearAlgebra.Vector2 point1, Brush brush, float strokeWidth)
         {
             DrawLine(point0, point1, brush, strokeWidth, null);
         }
