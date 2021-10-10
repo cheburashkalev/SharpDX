@@ -77,6 +77,12 @@ namespace SharpDX
             this.Direction = direction;
         }
 
+        public Ray(Engine.Mathematics.LinearAlgebra.Vector3 position, Engine.Mathematics.LinearAlgebra.Vector3 direction)
+        {
+            this.Position = new Vector3(position.X, position.Y, position.Y);
+            this.Direction = new Vector3(direction.X, direction.Y, direction.Z);
+        }
+
         /// <summary>
         /// Determines if there is an intersection between the current object and a point.
         /// </summary>

@@ -43,11 +43,11 @@
 * THE SOFTWARE.
 */
 
+using SharpDX.Mathematics.Interop;
 using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using SharpDX.Mathematics.Interop;
 
 namespace SharpDX
 {
@@ -145,6 +145,14 @@ namespace SharpDX
         /// <param name="value">A vector containing the values with which to initialize the X, Y, and Z components.</param>
         /// <param name="w">Initial value for the W component of the vector.</param>
         public Vector4(Vector3 value, float w)
+        {
+            X = value.X;
+            Y = value.Y;
+            Z = value.Z;
+            W = w;
+        }
+
+        public Vector4(Engine.Mathematics.LinearAlgebra.Vector3 value, float w)
         {
             X = value.X;
             Y = value.Y;
@@ -1260,7 +1268,7 @@ namespace SharpDX
         /// <param name="scale">The amount by which to scale the vector.</param>
         /// <param name="value">The vector to scale.</param>        
         /// <returns>The scaled vector.</returns>
-        public static Vector4 operator /(float scale,Vector4 value)
+        public static Vector4 operator /(float scale, Vector4 value)
         {
             return new Vector4(scale / value.X, scale / value.Y, scale / value.Z, scale / value.W);
         }
@@ -1387,7 +1395,7 @@ namespace SharpDX
             if (format == null)
                 return ToString();
 
-            return string.Format(CultureInfo.CurrentCulture, "X:{0} Y:{1} Z:{2} W:{3}", X.ToString(format, CultureInfo.CurrentCulture), 
+            return string.Format(CultureInfo.CurrentCulture, "X:{0} Y:{1} Z:{2} W:{3}", X.ToString(format, CultureInfo.CurrentCulture),
                 Y.ToString(format, CultureInfo.CurrentCulture), Z.ToString(format, CultureInfo.CurrentCulture), W.ToString(format, CultureInfo.CurrentCulture));
         }
 

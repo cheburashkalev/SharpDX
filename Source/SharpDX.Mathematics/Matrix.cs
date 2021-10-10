@@ -2716,12 +2716,24 @@ namespace SharpDX
             Translation(value.X, value.Y, value.Z, out result);
         }
 
+        public static void Translation(ref Engine.Mathematics.LinearAlgebra.Vector3 value, out Matrix result)
+        {
+            Translation(value.X, value.Y, value.Z, out result);
+        }
+
         /// <summary>
         /// Creates a translation matrix using the specified offsets.
         /// </summary>
         /// <param name="value">The offset for all three coordinate planes.</param>
         /// <returns>The created translation matrix.</returns>
         public static Matrix Translation(Vector3 value)
+        {
+            Matrix result;
+            Translation(ref value, out result);
+            return result;
+        }
+
+        public static Matrix Translation(Engine.Mathematics.LinearAlgebra.Vector3 value)
         {
             Matrix result;
             Translation(ref value, out result);
