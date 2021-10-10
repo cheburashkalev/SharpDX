@@ -21,10 +21,10 @@ namespace SharpDX.X3DAudio
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
         internal partial struct __Native
         {
-            public RawVector3 OrientFront;
-            public RawVector3 OrientTop;
-            public RawVector3 Position;
-            public RawVector3 Velocity;
+            public Engine.Mathematics.LinearAlgebra.Vector3 OrientFront;
+            public Engine.Mathematics.LinearAlgebra.Vector3 OrientTop;
+            public Engine.Mathematics.LinearAlgebra.Vector3 Position;
+            public Engine.Mathematics.LinearAlgebra.Vector3 Velocity;
             public System.IntPtr ConePointer;
             public Cone.__Native Cone;
             // Method to free unmanaged allocation
