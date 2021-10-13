@@ -79,7 +79,7 @@ namespace SharpDX
 
         public Ray(Engine.Mathematics.LinearAlgebra.Vector3 position, Engine.Mathematics.LinearAlgebra.Vector3 direction)
         {
-            this.Position = new Vector3(position.X, position.Y, position.Y);
+            this.Position = new Vector3(position.X, position.Y, position.Z);
             this.Direction = new Vector3(direction.X, direction.Y, direction.Z);
         }
 
