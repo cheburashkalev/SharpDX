@@ -77,6 +77,12 @@ namespace SharpDX
             this.Maximum = maximum;
         }
 
+        public BoundingBox(Engine.Mathematics.LinearAlgebra.Vector3 minimum, Engine.Mathematics.LinearAlgebra.Vector3 maximum)
+        {
+            this.Minimum = new Vector3(minimum.X, minimum.Y, minimum.Z);
+            this.Maximum = new Vector3(maximum.X, maximum.Y, maximum.Z);
+        }
+
         /// <summary>
         /// Returns the width of the bounding box
         /// </summary>

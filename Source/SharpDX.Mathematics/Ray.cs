@@ -192,6 +192,11 @@ namespace SharpDX
             return Collision.RayIntersectsTriangle(ref this, ref vertex1, ref vertex2, ref vertex3, out point);
         }
 
+        public bool Intersects(ref Engine.Mathematics.LinearAlgebra.Vector3 vertex1, ref Engine.Mathematics.LinearAlgebra.Vector3 vertex2, ref Engine.Mathematics.LinearAlgebra.Vector3 vertex3, out Engine.Mathematics.LinearAlgebra.Vector3 point)
+        {
+            return Collision.RayIntersectsTriangle(ref this, ref vertex1, ref vertex2, ref vertex3, out point);
+        }
+
         /// <summary>
         /// Determines if there is an intersection between the current object and a <see cref="BoundingBox"/>.
         /// </summary>

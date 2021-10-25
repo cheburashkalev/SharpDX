@@ -18,11 +18,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using SharpDX.Mathematics.Interop;
 using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using SharpDX.Mathematics.Interop;
 
 namespace SharpDX
 {
@@ -141,11 +141,11 @@ namespace SharpDX
         /// </returns>
         public bool Equals(ref ViewportF other)
         {
-            return MathUtil.NearEqual(X, other.X) && 
-                MathUtil.NearEqual(Y, other.Y) && 
-                MathUtil.NearEqual(Width, other.Width) && 
-                MathUtil.NearEqual(Height, other.Height) && 
-                MathUtil.NearEqual(MinDepth, other.MinDepth) && 
+            return MathUtil.NearEqual(X, other.X) &&
+                MathUtil.NearEqual(Y, other.Y) &&
+                MathUtil.NearEqual(Width, other.Width) &&
+                MathUtil.NearEqual(Height, other.Height) &&
+                MathUtil.NearEqual(MinDepth, other.MinDepth) &&
                 MathUtil.NearEqual(MaxDepth, other.MaxDepth);
         }
 
@@ -161,7 +161,7 @@ namespace SharpDX
         {
             return Equals(ref other);
         }
-	
+
         /// <summary>
         /// Determines whether the specified object is equal to this instance.
         /// </summary>
@@ -171,13 +171,13 @@ namespace SharpDX
         /// </returns>
         public override bool Equals(object obj)
         {
-            if(!(obj is ViewportF))
+            if (!(obj is ViewportF))
                 return false;
 
             var strongValue = (ViewportF)obj;
             return Equals(ref strongValue);
         }
-	
+
         /// <summary>
         /// Returns a hash code for this instance.
         /// </summary>
@@ -198,7 +198,7 @@ namespace SharpDX
             }
         }
 
-    	/// <summary>
+        /// <summary>
         /// Implements the operator ==.
         /// </summary>
         /// <param name="left">The left.</param>
@@ -210,7 +210,7 @@ namespace SharpDX
             return left.Equals(ref right);
         }
 
-	    /// <summary>
+        /// <summary>
         /// Implements the operator !=.
         /// </summary>
         /// <param name="left">The left.</param>
@@ -250,6 +250,17 @@ namespace SharpDX
             return vector;
         }
 
+        public Engine.Mathematics.LinearAlgebra.Vector3 Project(Engine.Mathematics.LinearAlgebra.Vector3 source, Matrix projection, Matrix view, Matrix world)
+        {
+            Matrix matrix;
+            Matrix.Multiply(ref world, ref view, out matrix);
+            Matrix.Multiply(ref matrix, ref projection, out matrix);
+
+            Engine.Mathematics.LinearAlgebra.Vector3 vector = new Engine.Mathematics.LinearAlgebra.Vector3();
+            Project(ref source, ref matrix, out vector);
+            return vector;
+        }
+
         /// <summary>
         /// Projects a 3D vector from object space into screen space.
         /// </summary>
@@ -257,6 +268,21 @@ namespace SharpDX
         /// <param name="matrix">A combined WorldViewProjection matrix.</param>
         /// <param name="vector">The projected vector.</param>
         public void Project(ref Vector3 source, ref Matrix matrix, out Vector3 vector)
+        {
+            Vector3.Transform(ref source, ref matrix, out vector);
+            float a = (((source.X * matrix.M14) + (source.Y * matrix.M24)) + (source.Z * matrix.M34)) + matrix.M44;
+
+            if (!MathUtil.IsOne(a))
+            {
+                vector = (vector / a);
+            }
+
+            vector.X = (((vector.X + 1f) * 0.5f) * Width) + X;
+            vector.Y = (((-vector.Y + 1f) * 0.5f) * Height) + Y;
+            vector.Z = (vector.Z * (MaxDepth - MinDepth)) + MinDepth;
+        }
+
+        public void Project(ref Engine.Mathematics.LinearAlgebra.Vector3 source, ref Matrix matrix, out Engine.Mathematics.LinearAlgebra.Vector3 vector)
         {
             Vector3.Transform(ref source, ref matrix, out vector);
             float a = (((source.X * matrix.M14) + (source.Y * matrix.M24)) + (source.Z * matrix.M34)) + matrix.M44;

@@ -785,6 +785,19 @@ namespace SharpDX
             return true;
         }
 
+        public static bool RayIntersectsTriangle(ref Ray ray, ref Engine.Mathematics.LinearAlgebra.Vector3 vertex1, ref Engine.Mathematics.LinearAlgebra.Vector3 vertex2, ref Engine.Mathematics.LinearAlgebra.Vector3 vertex3, out Engine.Mathematics.LinearAlgebra.Vector3 point)
+        {
+            float distance;
+            if (!RayIntersectsTriangle(ref ray, ref vertex1, ref vertex2, ref vertex3, out distance))
+            {
+                point = new Engine.Mathematics.LinearAlgebra.Vector3(0.0f);
+                return false;
+            }
+
+            point = new Engine.Mathematics.LinearAlgebra.Vector3(ray.Position.X, ray.Position.Y, ray.Position.Z) + (new Engine.Mathematics.LinearAlgebra.Vector3(ray.Direction.X, ray.Direction.Y, ray.Direction.Z) * distance);
+            return true;
+        }
+
         /// <summary>
         /// Determines whether there is an intersection between a <see cref="Ray"/> and a <see cref="BoundingBox"/>.
         /// </summary>

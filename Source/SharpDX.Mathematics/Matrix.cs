@@ -43,11 +43,12 @@
 * THE SOFTWARE.
 */
 
+using Engine.Mathematics;
+using SharpDX.Mathematics.Interop;
 using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using SharpDX.Mathematics.Interop;
 
 namespace SharpDX
 {
@@ -151,133 +152,133 @@ namespace SharpDX
         /// Value at row 4 column 4 of the matrix.
         /// </summary>
         public float M44;
-     
+
         /// <summary>
         /// Gets or sets the up <see cref="Vector3"/> of the matrix; that is M21, M22, and M23.
         /// </summary>
         public Vector3 Up
         {
-          get
-          {
-            Vector3 vector3;
-            vector3.X = this.M21;
-            vector3.Y = this.M22;
-            vector3.Z = this.M23;
-            return vector3;
-          }
-          set
-          {
-            this.M21 = value.X;
-            this.M22 = value.Y;
-            this.M23 = value.Z;
-          }
+            get
+            {
+                Vector3 vector3;
+                vector3.X = this.M21;
+                vector3.Y = this.M22;
+                vector3.Z = this.M23;
+                return vector3;
+            }
+            set
+            {
+                this.M21 = value.X;
+                this.M22 = value.Y;
+                this.M23 = value.Z;
+            }
         }
-    
+
         /// <summary>
         /// Gets or sets the down <see cref="Vector3"/> of the matrix; that is -M21, -M22, and -M23.
         /// </summary>
         public Vector3 Down
         {
-          get
-          {
-            Vector3 vector3;
-            vector3.X = -this.M21;
-            vector3.Y = -this.M22;
-            vector3.Z = -this.M23;
-            return vector3;
-          }
-          set
-          {
-            this.M21 = -value.X;
-            this.M22 = -value.Y;
-            this.M23 = -value.Z;
-          }
+            get
+            {
+                Vector3 vector3;
+                vector3.X = -this.M21;
+                vector3.Y = -this.M22;
+                vector3.Z = -this.M23;
+                return vector3;
+            }
+            set
+            {
+                this.M21 = -value.X;
+                this.M22 = -value.Y;
+                this.M23 = -value.Z;
+            }
         }
-    
+
         /// <summary>
         /// Gets or sets the right <see cref="Vector3"/> of the matrix; that is M11, M12, and M13.
         /// </summary>
         public Vector3 Right
         {
-          get
-          {
-            Vector3 vector3;
-            vector3.X = this.M11;
-            vector3.Y = this.M12;
-            vector3.Z = this.M13;
-            return vector3;
-          }
-          set
-          {
-            this.M11 = value.X;
-            this.M12 = value.Y;
-            this.M13 = value.Z;
-          }
+            get
+            {
+                Vector3 vector3;
+                vector3.X = this.M11;
+                vector3.Y = this.M12;
+                vector3.Z = this.M13;
+                return vector3;
+            }
+            set
+            {
+                this.M11 = value.X;
+                this.M12 = value.Y;
+                this.M13 = value.Z;
+            }
         }
-    
+
         /// <summary>
         /// Gets or sets the left <see cref="Vector3"/> of the matrix; that is -M11, -M12, and -M13.
         /// </summary>
         public Vector3 Left
         {
-          get
-          {
-            Vector3 vector3;
-            vector3.X = -this.M11;
-            vector3.Y = -this.M12;
-            vector3.Z = -this.M13;
-            return vector3;
-          }
-          set
-          {
-            this.M11 = -value.X;
-            this.M12 = -value.Y;
-            this.M13 = -value.Z;
-          }
+            get
+            {
+                Vector3 vector3;
+                vector3.X = -this.M11;
+                vector3.Y = -this.M12;
+                vector3.Z = -this.M13;
+                return vector3;
+            }
+            set
+            {
+                this.M11 = -value.X;
+                this.M12 = -value.Y;
+                this.M13 = -value.Z;
+            }
         }
-        
+
         /// <summary>
         /// Gets or sets the forward <see cref="Vector3"/> of the matrix; that is -M31, -M32, and -M33.
         /// </summary>
         public Vector3 Forward
         {
-          get
-          {
-            Vector3 vector3;
-            vector3.X = -this.M31;
-            vector3.Y = -this.M32;
-            vector3.Z = -this.M33;
-            return vector3;
-          }
-          set
-          {
-            this.M31 = -value.X;
-            this.M32 = -value.Y;
-            this.M33 = -value.Z;
-          }
+            get
+            {
+                Vector3 vector3;
+                vector3.X = -this.M31;
+                vector3.Y = -this.M32;
+                vector3.Z = -this.M33;
+                return vector3;
+            }
+            set
+            {
+                this.M31 = -value.X;
+                this.M32 = -value.Y;
+                this.M33 = -value.Z;
+            }
         }
-        
+
         /// <summary>
         /// Gets or sets the backward <see cref="Vector3"/> of the matrix; that is M31, M32, and M33.
         /// </summary>
         public Vector3 Backward
         {
-          get
-          {
-            Vector3 vector3;
-            vector3.X = this.M31;
-            vector3.Y = this.M32;
-            vector3.Z = this.M33;
-            return vector3;
-          }
-          set
-          {
-            this.M31 = value.X;
-            this.M32 = value.Y;
-            this.M33 = value.Z;
-          }
+            get
+            {
+                Vector3 vector3;
+                vector3.X = this.M31;
+                vector3.Y = this.M32;
+                vector3.Z = this.M33;
+                return vector3;
+            }
+            set
+            {
+                this.M31 = value.X;
+                this.M32 = value.Y;
+                this.M33 = value.Z;
+            }
         }
-        
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Matrix"/> struct.
         /// </summary>
@@ -468,16 +469,16 @@ namespace SharpDX
             {
                 switch (index)
                 {
-                    case 0:  return M11;
-                    case 1:  return M12;
-                    case 2:  return M13;
-                    case 3:  return M14;
-                    case 4:  return M21;
-                    case 5:  return M22;
-                    case 6:  return M23;
-                    case 7:  return M24;
-                    case 8:  return M31;
-                    case 9:  return M32;
+                    case 0: return M11;
+                    case 1: return M12;
+                    case 2: return M13;
+                    case 3: return M14;
+                    case 4: return M21;
+                    case 5: return M22;
+                    case 6: return M23;
+                    case 7: return M24;
+                    case 8: return M31;
+                    case 9: return M32;
                     case 10: return M33;
                     case 11: return M34;
                     case 12: return M41;
@@ -658,14 +659,14 @@ namespace SharpDX
 
             L = new Matrix();
             L.M11 = Vector4.Dot(Q.Row1, Row1);
-            
+
             L.M21 = Vector4.Dot(Q.Row1, Row2);
             L.M22 = Vector4.Dot(Q.Row2, Row2);
-            
+
             L.M31 = Vector4.Dot(Q.Row1, Row3);
             L.M32 = Vector4.Dot(Q.Row2, Row3);
             L.M33 = Vector4.Dot(Q.Row3, Row3);
-            
+
             L.M41 = Vector4.Dot(Q.Row1, Row4);
             L.M42 = Vector4.Dot(Q.Row2, Row4);
             L.M43 = Vector4.Dot(Q.Row3, Row4);
@@ -1994,7 +1995,8 @@ namespace SharpDX
         /// <param name="cameraUpVector">The up vector of the camera.</param>
         /// <param name="cameraForwardVector">The forward vector of the camera.</param>
         /// <returns>The created billboard matrix.</returns>
-        public static Matrix BillboardRH(Vector3 objectPosition, Vector3 cameraPosition, Vector3 cameraUpVector, Vector3 cameraForwardVector) {
+        public static Matrix BillboardRH(Vector3 objectPosition, Vector3 cameraPosition, Vector3 cameraUpVector, Vector3 cameraForwardVector)
+        {
             Matrix result;
             BillboardRH(ref objectPosition, ref cameraPosition, ref cameraUpVector, ref cameraForwardVector, out result);
             return result;
@@ -2028,6 +2030,30 @@ namespace SharpDX
             result.M43 = -result.M43;
         }
 
+        public static void LookAtLH(ref Engine.Mathematics.LinearAlgebra.Vector3 eye, ref Engine.Mathematics.LinearAlgebra.Vector3 target, ref Engine.Mathematics.LinearAlgebra.Vector3 up, out Matrix result)
+        {
+            var zaxis = target - eye;
+            zaxis.Normalize();
+
+            var xaxis = Calculator.CrossProduct(ref up, ref zaxis);
+            xaxis.Normalize();
+
+            var yaxis = Calculator.CrossProduct(ref zaxis, ref xaxis);
+
+            result = Matrix.Identity;
+            result.M11 = xaxis.X; result.M21 = xaxis.Y; result.M31 = xaxis.Z;
+            result.M12 = yaxis.X; result.M22 = yaxis.Y; result.M32 = yaxis.Z;
+            result.M13 = zaxis.X; result.M23 = zaxis.Y; result.M33 = zaxis.Z;
+
+            result.M41 = Calculator.DotProduct(ref xaxis, ref eye);
+            result.M42 = Calculator.DotProduct(ref yaxis, ref eye);
+            result.M43 = Calculator.DotProduct(ref zaxis, ref eye);
+
+            result.M41 = -result.M41;
+            result.M42 = -result.M42;
+            result.M43 = -result.M43;
+        }
+
         /// <summary>
         /// Creates a left-handed, look-at matrix.
         /// </summary>
@@ -2036,6 +2062,13 @@ namespace SharpDX
         /// <param name="up">The camera's up vector.</param>
         /// <returns>The created look-at matrix.</returns>
         public static Matrix LookAtLH(Vector3 eye, Vector3 target, Vector3 up)
+        {
+            Matrix result;
+            LookAtLH(ref eye, ref target, ref up, out result);
+            return result;
+        }
+
+        public static Matrix LookAtLH(Engine.Mathematics.LinearAlgebra.Vector3 eye, Engine.Mathematics.LinearAlgebra.Vector3 target, Engine.Mathematics.LinearAlgebra.Vector3 up)
         {
             Matrix result;
             LookAtLH(ref eye, ref target, ref up, out result);
@@ -2441,6 +2474,11 @@ namespace SharpDX
             Scaling(scale.X, scale.Y, scale.Z, out result);
         }
 
+        public static void Scaling(ref Engine.Mathematics.LinearAlgebra.Vector3 scale, out Matrix result)
+        {
+            Scaling(scale.X, scale.Y, scale.Z, out result);
+        }
+
         /// <summary>
         /// Creates a matrix that scales along the x-axis, y-axis, and y-axis.
         /// </summary>
@@ -2450,6 +2488,12 @@ namespace SharpDX
         {
             Matrix result;
             Scaling(ref scale, out result);
+            return result;
+        }
+
+        public static Matrix Scaling(Engine.Mathematics.LinearAlgebra.Vector3 scale)
+        {
+            Scaling(ref scale, out var result);
             return result;
         }
 
@@ -2787,7 +2831,7 @@ namespace SharpDX
             Vector3 e1 = Vector3.Normalize(transVec);
 
             float rv1;
-            Vector3.Dot(ref rotationVec, ref  e1, out rv1);
+            Vector3.Dot(ref rotationVec, ref e1, out rv1);
             e0 += rv1 * e1;
             float rv0;
             Vector3.Dot(ref rotationVec, ref e0, out rv0);
@@ -2938,7 +2982,7 @@ namespace SharpDX
             Matrix sr = RotationQuaternion(scalingRotation);
 
             result = Translation(-scalingCenter) * Transpose(sr) * Scaling(scaling) * sr * Translation(scalingCenter) * Translation(-rotationCenter) *
-                RotationQuaternion(rotation) * Translation(rotationCenter) * Translation(translation);       
+                RotationQuaternion(rotation) * Translation(rotationCenter) * Translation(translation);
         }
 
         /// <summary>
@@ -2970,7 +3014,7 @@ namespace SharpDX
         /// <param name="result">When the method completes, contains the created transformation matrix.</param>
         public static void Transformation2D(ref Vector2 scalingCenter, float scalingRotation, ref Vector2 scaling, ref Vector2 rotationCenter, float rotation, ref Vector2 translation, out Matrix result)
         {
-            result = Translation((Vector3)(-scalingCenter)) * RotationZ(-scalingRotation) * Scaling((Vector3)scaling) * RotationZ(scalingRotation) * Translation((Vector3)scalingCenter) * 
+            result = Translation((Vector3)(-scalingCenter)) * RotationZ(-scalingRotation) * Scaling((Vector3)scaling) * RotationZ(scalingRotation) * Translation((Vector3)scalingCenter) *
                 Translation((Vector3)(-rotationCenter)) * RotationZ(rotation) * Translation((Vector3)rotationCenter) * Translation((Vector3)translation);
 
             result.M33 = 1f;
