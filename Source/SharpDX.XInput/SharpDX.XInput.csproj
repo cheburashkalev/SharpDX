@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
-    <PackageReference Update="Nerdbank.GitVersioning" Version="3.5.108" />
+    <PackageReference Update="Nerdbank.GitVersioning" Version="3.5.109" />
     <PackageReference Update="SharpGenTools.Sdk" Version="1.2.1" />
   </ItemGroup>
 
