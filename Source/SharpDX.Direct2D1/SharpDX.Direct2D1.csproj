@@ -10,7 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Engine.Mathematics\Engine.Mathematics.csproj" />
     <ProjectReference Include="..\SharpDX.DXGI\SharpDX.DXGI.csproj" />
     <ProjectReference Include="..\SharpDX\SharpDX.csproj" />
   </ItemGroup>
