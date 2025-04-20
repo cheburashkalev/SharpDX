@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     <Version>4.2.0.0</Version>
-	<PackageId>SharpDX.Mathematics.net8</PackageId>
+	<PackageId>LechoStudio.SharpDX.Mathematics.net8</PackageId>
 	<Authors>Alexandre Mutel, Andrei Levchenko</Authors>
 	<Company>Alexandre Mutel, Andrei Levchenko</Company>
 	<RepositoryUrl>https://github.com/cheburashkalev/SharpDX</RepositoryUrl>
-    <Product>SharpDX.Mathmatics</Product>
+    <Product>LechoStudio.SharpDX.Mathmatics.net8</Product>
     <Copyright>Copyright (c) 2010-2016 Alexandre Mutel</Copyright>
   </PropertyGroup>
 
