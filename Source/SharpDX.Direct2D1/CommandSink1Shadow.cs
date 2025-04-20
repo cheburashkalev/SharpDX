@@ -20,7 +20,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using static SharpDX.ComObjectShadow;
 
 namespace SharpDX.Direct2D1
 {
@@ -68,7 +67,7 @@ namespace SharpDX.Direct2D1
             }
         }
 
-        protected override ComObjectVtbl GetVtbl
+        protected override CppObjectVtbl GetVtbl
         {
             get { return Vtbl; }
         }

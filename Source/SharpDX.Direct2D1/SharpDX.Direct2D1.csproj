@@ -1,23 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Version>4.2.0.0</Version>
-    <Authors>Alexandre Mutel</Authors>
-    <Company>Alexandre Mutel</Company>
-    <Product>SharpDX.Direct2D1</Product>
-    <Copyright>Copyright (c) 2010-2016 Alexandre Mutel</Copyright>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+		<Version>4.2.0.0</Version>
+		<Authors>Alexandre Mutel</Authors>
+		<Company>Alexandre Mutel</Company>
+		<Product>SharpDX.Direct2D1</Product>
+		<Copyright>Copyright (c) 2010-2016 Alexandre Mutel</Copyright>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SharpDX.DXGI\SharpDX.DXGI.csproj" />
-    <ProjectReference Include="..\SharpDX\SharpDX.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SharpDX.DXGI\SharpDX.DXGI.csproj" />
+		<ProjectReference Include="..\SharpDX\SharpDX.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
-    <PackageReference Update="Nerdbank.GitVersioning" Version="3.6.146" />
-    <PackageReference Update="SharpGenTools.Sdk" Version="1.2.1" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+		<PackageReference Update="Nerdbank.GitVersioning" Version="3.6.146" />
+		<PackageReference Update="SharpGenTools.Sdk" Version="1.2.1" />
+	</ItemGroup>
 
 </Project>

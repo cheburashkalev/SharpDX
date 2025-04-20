@@ -18,11 +18,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using SharpDX.Mathematics.Interop;
 using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using SharpDX.Mathematics.Interop;
 
 namespace SharpDX
 {
@@ -250,17 +250,6 @@ namespace SharpDX
             return vector;
         }
 
-        public Engine.Mathematics.LinearAlgebra.Vector3 Project(Engine.Mathematics.LinearAlgebra.Vector3 source, Matrix projection, Matrix view, Matrix world)
-        {
-            Matrix matrix;
-            Matrix.Multiply(ref world, ref view, out matrix);
-            Matrix.Multiply(ref matrix, ref projection, out matrix);
-
-            Engine.Mathematics.LinearAlgebra.Vector3 vector = new Engine.Mathematics.LinearAlgebra.Vector3();
-            Project(ref source, ref matrix, out vector);
-            return vector;
-        }
-
         /// <summary>
         /// Projects a 3D vector from object space into screen space.
         /// </summary>
@@ -268,21 +257,6 @@ namespace SharpDX
         /// <param name="matrix">A combined WorldViewProjection matrix.</param>
         /// <param name="vector">The projected vector.</param>
         public void Project(ref Vector3 source, ref Matrix matrix, out Vector3 vector)
-        {
-            Vector3.Transform(ref source, ref matrix, out vector);
-            float a = (((source.X * matrix.M14) + (source.Y * matrix.M24)) + (source.Z * matrix.M34)) + matrix.M44;
-
-            if (!MathUtil.IsOne(a))
-            {
-                vector = (vector / a);
-            }
-
-            vector.X = (((vector.X + 1f) * 0.5f) * Width) + X;
-            vector.Y = (((-vector.Y + 1f) * 0.5f) * Height) + Y;
-            vector.Z = (vector.Z * (MaxDepth - MinDepth)) + MinDepth;
-        }
-
-        public void Project(ref Engine.Mathematics.LinearAlgebra.Vector3 source, ref Matrix matrix, out Engine.Mathematics.LinearAlgebra.Vector3 vector)
         {
             Vector3.Transform(ref source, ref matrix, out vector);
             float a = (((source.X * matrix.M14) + (source.Y * matrix.M24)) + (source.Z * matrix.M34)) + matrix.M44;
@@ -317,18 +291,6 @@ namespace SharpDX
             return vector;
         }
 
-        public Engine.Mathematics.LinearAlgebra.Vector3 Unproject(Engine.Mathematics.LinearAlgebra.Vector3 source, Matrix projection, Matrix view, Matrix world)
-        {
-            Matrix matrix;
-            Matrix.Multiply(ref world, ref view, out matrix);
-            Matrix.Multiply(ref matrix, ref projection, out matrix);
-            Matrix.Invert(ref matrix, out matrix);
-
-            Engine.Mathematics.LinearAlgebra.Vector3 vector;
-            Unproject(ref source, ref matrix, out vector);
-            return vector;
-        }
-
         /// <summary>
         /// Converts a screen space point into a corresponding point in world space.
         /// </summary>
@@ -337,22 +299,6 @@ namespace SharpDX
         /// <param name="vector">The unprojected vector.</param>
         public void Unproject(ref Vector3 source, ref Matrix matrix, out Vector3 vector)
         {
-            vector.X = (((source.X - X) / (Width)) * 2f) - 1f;
-            vector.Y = -((((source.Y - Y) / (Height)) * 2f) - 1f);
-            vector.Z = (source.Z - MinDepth) / (MaxDepth - MinDepth);
-
-            float a = (((vector.X * matrix.M14) + (vector.Y * matrix.M24)) + (vector.Z * matrix.M34)) + matrix.M44;
-            Vector3.Transform(ref vector, ref matrix, out vector);
-
-            if (!MathUtil.IsOne(a))
-            {
-                vector = (vector / a);
-            }
-        }
-
-        public void Unproject(ref Engine.Mathematics.LinearAlgebra.Vector3 source, ref Matrix matrix, out Engine.Mathematics.LinearAlgebra.Vector3 vector)
-        {
-            vector = new Engine.Mathematics.LinearAlgebra.Vector3();
             vector.X = (((source.X - X) / (Width)) * 2f) - 1f;
             vector.Y = -((((source.Y - Y) / (Height)) * 2f) - 1f);
             vector.Z = (source.Z - MinDepth) / (MaxDepth - MinDepth);

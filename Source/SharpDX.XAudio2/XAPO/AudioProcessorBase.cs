@@ -80,7 +80,7 @@ namespace SharpDX.XAPO
         public RegistrationProperties RegistrationProperties
         {
             get { return _registrationProperies; }
-            protected set { _registrationProperies = value;  }
+            protected set { _registrationProperies = value; }
         }
 
         /// <summary>	
@@ -94,7 +94,7 @@ namespace SharpDX.XAPO
         public bool IsInputFormatSupported(WaveFormat outputFormat, WaveFormat requestedInputFormat, out WaveFormat supportedInputFormat)
         {
             supportedInputFormat = requestedInputFormat;
-            return true;            
+            return true;
         }
 
         /// <summary>	
@@ -118,7 +118,7 @@ namespace SharpDX.XAPO
         /// <returns>No documentation.</returns>
         /// <unmanaged>HRESULT IXAPO::Initialize([In, Buffer, Optional] const void* pData,[None] UINT32 DataByteSize)</unmanaged>
         public void Initialize(DataStream stream)
-        {           
+        {
         }
 
         /// <summary>	

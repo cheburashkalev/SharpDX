@@ -43,12 +43,11 @@
 * THE SOFTWARE.
 */
 
-using Engine.Mathematics;
-using SharpDX.Mathematics.Interop;
 using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using SharpDX.Mathematics.Interop;
 
 namespace SharpDX
 {
@@ -2030,30 +2029,6 @@ namespace SharpDX
             result.M43 = -result.M43;
         }
 
-        public static void LookAtLH(ref Engine.Mathematics.LinearAlgebra.Vector3 eye, ref Engine.Mathematics.LinearAlgebra.Vector3 target, ref Engine.Mathematics.LinearAlgebra.Vector3 up, out Matrix result)
-        {
-            var zaxis = target - eye;
-            zaxis.Normalize();
-
-            var xaxis = Calculator.CrossProduct(ref up, ref zaxis);
-            xaxis.Normalize();
-
-            var yaxis = Calculator.CrossProduct(ref zaxis, ref xaxis);
-
-            result = Matrix.Identity;
-            result.M11 = xaxis.X; result.M21 = xaxis.Y; result.M31 = xaxis.Z;
-            result.M12 = yaxis.X; result.M22 = yaxis.Y; result.M32 = yaxis.Z;
-            result.M13 = zaxis.X; result.M23 = zaxis.Y; result.M33 = zaxis.Z;
-
-            result.M41 = Calculator.DotProduct(ref xaxis, ref eye);
-            result.M42 = Calculator.DotProduct(ref yaxis, ref eye);
-            result.M43 = Calculator.DotProduct(ref zaxis, ref eye);
-
-            result.M41 = -result.M41;
-            result.M42 = -result.M42;
-            result.M43 = -result.M43;
-        }
-
         /// <summary>
         /// Creates a left-handed, look-at matrix.
         /// </summary>
@@ -2062,13 +2037,6 @@ namespace SharpDX
         /// <param name="up">The camera's up vector.</param>
         /// <returns>The created look-at matrix.</returns>
         public static Matrix LookAtLH(Vector3 eye, Vector3 target, Vector3 up)
-        {
-            Matrix result;
-            LookAtLH(ref eye, ref target, ref up, out result);
-            return result;
-        }
-
-        public static Matrix LookAtLH(Engine.Mathematics.LinearAlgebra.Vector3 eye, Engine.Mathematics.LinearAlgebra.Vector3 target, Engine.Mathematics.LinearAlgebra.Vector3 up)
         {
             Matrix result;
             LookAtLH(ref eye, ref target, ref up, out result);
@@ -2474,11 +2442,6 @@ namespace SharpDX
             Scaling(scale.X, scale.Y, scale.Z, out result);
         }
 
-        public static void Scaling(ref Engine.Mathematics.LinearAlgebra.Vector3 scale, out Matrix result)
-        {
-            Scaling(scale.X, scale.Y, scale.Z, out result);
-        }
-
         /// <summary>
         /// Creates a matrix that scales along the x-axis, y-axis, and y-axis.
         /// </summary>
@@ -2488,12 +2451,6 @@ namespace SharpDX
         {
             Matrix result;
             Scaling(ref scale, out result);
-            return result;
-        }
-
-        public static Matrix Scaling(Engine.Mathematics.LinearAlgebra.Vector3 scale)
-        {
-            Scaling(ref scale, out var result);
             return result;
         }
 
@@ -2760,24 +2717,12 @@ namespace SharpDX
             Translation(value.X, value.Y, value.Z, out result);
         }
 
-        public static void Translation(ref Engine.Mathematics.LinearAlgebra.Vector3 value, out Matrix result)
-        {
-            Translation(value.X, value.Y, value.Z, out result);
-        }
-
         /// <summary>
         /// Creates a translation matrix using the specified offsets.
         /// </summary>
         /// <param name="value">The offset for all three coordinate planes.</param>
         /// <returns>The created translation matrix.</returns>
         public static Matrix Translation(Vector3 value)
-        {
-            Matrix result;
-            Translation(ref value, out result);
-            return result;
-        }
-
-        public static Matrix Translation(Engine.Mathematics.LinearAlgebra.Vector3 value)
         {
             Matrix result;
             Translation(ref value, out result);

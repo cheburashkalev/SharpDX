@@ -1350,7 +1350,7 @@ namespace SharpDX.Direct3D9 {
                 var descRef_ = new SharpDX.Direct3D9.ParameterDescription.__Native();
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, &descRef_,((void**)(*(void**)_nativePointer))[4]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, &descRef_,((void**)(*(void**)_nativePointer))[4]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 descRef = new SharpDX.Direct3D9.ParameterDescription();
                 descRef.__MarshalFrom(ref descRef_);
@@ -1376,7 +1376,7 @@ namespace SharpDX.Direct3D9 {
                 var descRef_ = new SharpDX.Direct3D9.TechniqueDescription.__Native();
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hTechnique_, &descRef_,((void**)(*(void**)_nativePointer))[5]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hTechnique_, &descRef_,((void**)(*(void**)_nativePointer))[5]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hTechnique, ref hTechnique_);
                 descRef = new SharpDX.Direct3D9.TechniqueDescription();
                 descRef.__MarshalFrom(ref descRef_);
@@ -1405,7 +1405,7 @@ namespace SharpDX.Direct3D9 {
                 var descRef_ = new SharpDX.Direct3D9.PassDescription.__Native();
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hPass_, &descRef_,((void**)(*(void**)_nativePointer))[6]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hPass_, &descRef_,((void**)(*(void**)_nativePointer))[6]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hPass, ref hPass_);
                 descRef = new SharpDX.Direct3D9.PassDescription();
                 descRef.__MarshalFrom(ref descRef_);
@@ -1431,7 +1431,7 @@ namespace SharpDX.Direct3D9 {
                 var descRef_ = new SharpDX.Direct3D9.FunctionDescription.__Native();
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hShader_, &descRef_,((void**)(*(void**)_nativePointer))[7]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hShader_, &descRef_,((void**)(*(void**)_nativePointer))[7]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hShader, ref hShader_);
                 descRef = new SharpDX.Direct3D9.FunctionDescription();
                 descRef.__MarshalFrom(ref descRef_);
@@ -1795,7 +1795,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Result __result__;
                 fixed (void* bRef_ = &bRef)
                     __result__= 
-    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, bRef_,((void**)(*(void**)_nativePointer))[23]);		
+    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, bRef_,((void**)(*(void**)_nativePointer))[23]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 __result__.CheckError();
             }
@@ -1888,7 +1888,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Result __result__;
                 fixed (void* nRef_ = &nRef)
                     __result__= 
-    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, nRef_,((void**)(*(void**)_nativePointer))[27]);		
+    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, nRef_,((void**)(*(void**)_nativePointer))[27]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 __result__.CheckError();
             }
@@ -1981,7 +1981,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Result __result__;
                 fixed (void* fRef_ = &fRef)
                     __result__= 
-    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, fRef_,((void**)(*(void**)_nativePointer))[31]);		
+    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, fRef_,((void**)(*(void**)_nativePointer))[31]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 __result__.CheckError();
             }
@@ -2054,7 +2054,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Direct3D9.EffectHandle.__MarshalTo(ref hParameter, ref hParameter_);
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, &vectorRef,((void**)(*(void**)_nativePointer))[34]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, &vectorRef,((void**)(*(void**)_nativePointer))[34]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 __result__.CheckError();
             }
@@ -2081,7 +2081,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Result __result__;
                 fixed (void* vectorRef_ = &vectorRef)
                     __result__= 
-    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, vectorRef_,((void**)(*(void**)_nativePointer))[35]);		
+    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, vectorRef_,((void**)(*(void**)_nativePointer))[35]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 __result__.CheckError();
             }
@@ -2161,7 +2161,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Result __result__;
                 fixed (void* matrixRef_ = &matrixRef)
                     __result__= 
-    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, matrixRef_,((void**)(*(void**)_nativePointer))[38]);		
+    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, matrixRef_,((void**)(*(void**)_nativePointer))[38]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 __result__.CheckError();
             }
@@ -2188,7 +2188,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Result __result__;
                 fixed (void* matrixRef_ = &matrixRef)
                     __result__= 
-    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, matrixRef_,((void**)(*(void**)_nativePointer))[39]);		
+    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, matrixRef_,((void**)(*(void**)_nativePointer))[39]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 __result__.CheckError();
             }
@@ -2323,7 +2323,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Result __result__;
                 fixed (void* matrixRef_ = &matrixRef)
                     __result__= 
-    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, matrixRef_,((void**)(*(void**)_nativePointer))[44]);		
+    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, matrixRef_,((void**)(*(void**)_nativePointer))[44]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 __result__.CheckError();
             }
@@ -2350,7 +2350,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Result __result__;
                 fixed (void* matrixRef_ = &matrixRef)
                     __result__= 
-    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, matrixRef_,((void**)(*(void**)_nativePointer))[45]);		
+    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, matrixRef_,((void**)(*(void**)_nativePointer))[45]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 __result__.CheckError();
             }
@@ -2482,7 +2482,7 @@ namespace SharpDX.Direct3D9 {
                 IntPtr stringRef_ = Utilities.StringToHGlobalAnsi(stringRef);
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, (void*)stringRef_,((void**)(*(void**)_nativePointer))[50]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, (void*)stringRef_,((void**)(*(void**)_nativePointer))[50]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 Marshal.FreeHGlobal(stringRef_ );
                 __result__.CheckError();
@@ -2505,7 +2505,7 @@ namespace SharpDX.Direct3D9 {
                 System.IntPtr stringOut;
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, &stringOut,((void**)(*(void**)_nativePointer))[51]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, &stringOut,((void**)(*(void**)_nativePointer))[51]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 __result__.CheckError();
                 return stringOut;
@@ -2528,7 +2528,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Direct3D9.EffectHandle.__MarshalTo(ref hParameter, ref hParameter_);
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, (void*)((textureRef == null)?IntPtr.Zero:textureRef.NativePointer),((void**)(*(void**)_nativePointer))[52]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, (void*)((textureRef == null)?IntPtr.Zero:textureRef.NativePointer),((void**)(*(void**)_nativePointer))[52]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 __result__.CheckError();
             }
@@ -2551,7 +2551,7 @@ namespace SharpDX.Direct3D9 {
                 IntPtr textureOut_ = IntPtr.Zero;
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, &textureOut_,((void**)(*(void**)_nativePointer))[53]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, &textureOut_,((void**)(*(void**)_nativePointer))[53]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 textureOut= (textureOut_ == IntPtr.Zero)?null:new SharpDX.Direct3D9.BaseTexture(textureOut_);	
                 __result__.CheckError();
@@ -2576,7 +2576,7 @@ namespace SharpDX.Direct3D9 {
                 IntPtr pShaderOut_ = IntPtr.Zero;
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, &pShaderOut_,((void**)(*(void**)_nativePointer))[54]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, &pShaderOut_,((void**)(*(void**)_nativePointer))[54]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 pShaderOut= (pShaderOut_ == IntPtr.Zero)?null:new SharpDX.Direct3D9.PixelShader(pShaderOut_);	
                 __result__.CheckError();
@@ -2601,7 +2601,7 @@ namespace SharpDX.Direct3D9 {
                 IntPtr vShaderOut_ = IntPtr.Zero;
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, &vShaderOut_,((void**)(*(void**)_nativePointer))[55]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, &vShaderOut_,((void**)(*(void**)_nativePointer))[55]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 vShaderOut= (vShaderOut_ == IntPtr.Zero)?null:new SharpDX.Direct3D9.VertexShader(vShaderOut_);	
                 __result__.CheckError();
@@ -3691,7 +3691,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Direct3D9.EffectHandle.__MarshalTo(ref effectHandle, ref effectHandle_);
                 int __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, effectHandle_,((void**)(*(void**)_nativePointer))[7]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)effectHandle_,((void**)(*(void**)_nativePointer))[7]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref effectHandle, ref effectHandle_);
                 return __result__;
             }
@@ -8490,7 +8490,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Direct3D9.EffectHandle.__MarshalTo(ref hTechnique, ref hTechnique_);
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hTechnique_,((void**)(*(void**)_nativePointer))[58]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hTechnique_,((void**)(*(void**)_nativePointer))[58]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hTechnique, ref hTechnique_);
                 __result__.CheckError();
             }
@@ -8528,7 +8528,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Direct3D9.EffectHandle.__MarshalTo(ref hTechnique, ref hTechnique_);
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hTechnique_,((void**)(*(void**)_nativePointer))[60]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hTechnique_,((void**)(*(void**)_nativePointer))[60]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hTechnique, ref hTechnique_);
                 __result__.CheckError();
             }
@@ -8551,7 +8551,7 @@ namespace SharpDX.Direct3D9 {
                 var techniqueRef_ = new SharpDX.Direct3D9.EffectHandle.__Native();
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hTechnique_, &techniqueRef_,((void**)(*(void**)_nativePointer))[61]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hTechnique_, &techniqueRef_,((void**)(*(void**)_nativePointer))[61]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hTechnique, ref hTechnique_);
                 techniqueRef = new SharpDX.Direct3D9.EffectHandle();
                 SharpDX.Direct3D9.EffectHandle.__MarshalFrom(ref techniqueRef, ref techniqueRef_);
@@ -8854,7 +8854,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Direct3D9.EffectHandle.__MarshalTo(ref hParameterBlock, ref hParameterBlock_);
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameterBlock_,((void**)(*(void**)_nativePointer))[75]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameterBlock_,((void**)(*(void**)_nativePointer))[75]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameterBlock, ref hParameterBlock_);
                 __result__.CheckError();
             }
@@ -8878,7 +8878,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Direct3D9.EffectHandle.__MarshalTo(ref hParameterBlock, ref hParameterBlock_);
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameterBlock_,((void**)(*(void**)_nativePointer))[76]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameterBlock_,((void**)(*(void**)_nativePointer))[76]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameterBlock, ref hParameterBlock_);
                 __result__.CheckError();
             }
@@ -9016,7 +9016,7 @@ namespace SharpDX.Direct3D9 {
                 literalRef = new SharpDX.Mathematics.Interop.RawBool();
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, hParameter_, &literalRef,((void**)(*(void**)_nativePointer))[58]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)hParameter_, &literalRef,((void**)(*(void**)_nativePointer))[58]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref hParameter, ref hParameter_);
                 __result__.CheckError();
                 return literalRef;
@@ -16046,7 +16046,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Direct3D9.EffectHandle.__MarshalTo(ref effectHandle, ref effectHandle_);
                 SharpDX.Result __result__;
                 __result__= 
-				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, effectHandle_, &vectorRef,((void**)(*(void**)_nativePointer))[18]);		
+				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)effectHandle_, &vectorRef,((void**)(*(void**)_nativePointer))[18]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref effectHandle, ref effectHandle_);
                 __result__.CheckError();
             }
@@ -16095,7 +16095,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Result __result__;
                 fixed (void* matrixRef_ = &matrixRef)
                     __result__= 
-    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, effectHandle_, matrixRef_,((void**)(*(void**)_nativePointer))[20]);		
+    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)effectHandle_, matrixRef_,((void**)(*(void**)_nativePointer))[20]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref effectHandle, ref effectHandle_);
                 __result__.CheckError();
             }
@@ -16175,7 +16175,7 @@ namespace SharpDX.Direct3D9 {
                 SharpDX.Result __result__;
                 fixed (void* matrixRef_ = &matrixRef)
                     __result__= 
-    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, effectHandle_, matrixRef_,((void**)(*(void**)_nativePointer))[23]);		
+    				SharpDX.Direct3D9.LocalInterop.Calliint(_nativePointer, (void*)effectHandle_, matrixRef_,((void**)(*(void**)_nativePointer))[23]);		
                 SharpDX.Direct3D9.EffectHandle.__MarshalFree(ref effectHandle, ref effectHandle_);
                 __result__.CheckError();
             }

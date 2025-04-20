@@ -77,12 +77,6 @@ namespace SharpDX
             this.Direction = direction;
         }
 
-        public Ray(Engine.Mathematics.LinearAlgebra.Vector3 position, Engine.Mathematics.LinearAlgebra.Vector3 direction)
-        {
-            this.Position = new Vector3(position.X, position.Y, position.Z);
-            this.Direction = new Vector3(direction.X, direction.Y, direction.Z);
-        }
-
         /// <summary>
         /// Determines if there is an intersection between the current object and a point.
         /// </summary>
@@ -188,11 +182,6 @@ namespace SharpDX
         /// or <see cref="Vector3.Zero"/> if there was no intersection.</param>
         /// <returns>Whether the two objects intersected.</returns>
         public bool Intersects(ref Vector3 vertex1, ref Vector3 vertex2, ref Vector3 vertex3, out Vector3 point)
-        {
-            return Collision.RayIntersectsTriangle(ref this, ref vertex1, ref vertex2, ref vertex3, out point);
-        }
-
-        public bool Intersects(ref Engine.Mathematics.LinearAlgebra.Vector3 vertex1, ref Engine.Mathematics.LinearAlgebra.Vector3 vertex2, ref Engine.Mathematics.LinearAlgebra.Vector3 vertex3, out Engine.Mathematics.LinearAlgebra.Vector3 point)
         {
             return Collision.RayIntersectsTriangle(ref this, ref vertex1, ref vertex2, ref vertex3, out point);
         }

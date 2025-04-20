@@ -284,21 +284,21 @@ namespace SharpDX.X3DAudio
         /// <doc-id>microsoft.directx_sdk.x3daudio.x3daudio_emitter</doc-id>
         /// <unmanaged>OrientFront</unmanaged>
         /// <unmanaged-short>OrientFront</unmanaged-short>
-        public Engine.Mathematics.LinearAlgebra.Vector3 OrientFront;
+        public SharpDX.Vector3 OrientFront;
         /// <summary>
         /// <dd> <p>Orientation of the top direction. This value must be orthonormal with <strong>OrientFront</strong>. <strong>OrientTop</strong> is only used with multi-channel emitters for matrix calculations.</p> </dd>
         /// </summary>
         /// <doc-id>microsoft.directx_sdk.x3daudio.x3daudio_emitter</doc-id>
         /// <unmanaged>OrientTop</unmanaged>
         /// <unmanaged-short>OrientTop</unmanaged-short>
-        public Engine.Mathematics.LinearAlgebra.Vector3 OrientTop;
+        public SharpDX.Vector3 OrientTop;
         /// <summary>
         /// <dd> <p>Position in user-defined world units. This value does not affect <strong>Velocity</strong>.</p> </dd>
         /// </summary>
         /// <doc-id>microsoft.directx_sdk.x3daudio.x3daudio_emitter</doc-id>
         /// <unmanaged>Position</unmanaged>
         /// <unmanaged-short>Position</unmanaged-short>
-        public Engine.Mathematics.LinearAlgebra.Vector3 Position;
+        public SharpDX.Vector3 Position;
         /// <summary>
         /// <dd> <p>Velocity vector in user-defined world units/second. This value is used only for doppler calculations. It does not affect <strong>Position</strong>. 
         /// </p> </dd>
@@ -306,7 +306,7 @@ namespace SharpDX.X3DAudio
         /// <doc-id>microsoft.directx_sdk.x3daudio.x3daudio_emitter</doc-id>
         /// <unmanaged>Velocity</unmanaged>
         /// <unmanaged-short>Velocity</unmanaged-short>
-        public Engine.Mathematics.LinearAlgebra.Vector3 Velocity;
+        public SharpDX.Vector3 Velocity;
         /// <summary>
         /// <dd> <p>Value to be used for the inner radius calculations. If <strong>InnerRadius</strong> is 0, then no inner radius is used, but <strong>InnerRadiusAngle</strong> may still be used. This value must be between 0.0f and MAX_FLT. 
         /// </p> </dd>
@@ -414,28 +414,28 @@ namespace SharpDX.X3DAudio
         /// <doc-id>microsoft.directx_sdk.x3daudio.x3daudio_listener</doc-id>
         /// <unmanaged>OrientFront</unmanaged>
         /// <unmanaged-short>OrientFront</unmanaged-short>
-        public Engine.Mathematics.LinearAlgebra.Vector3 OrientFront;
+        public SharpDX.Vector3 OrientFront;
         /// <summary>
         /// <dd> <p>Orientation of top direction, used only for matrix and delay calculations. This value must be orthonormal with <strong>OrientFront</strong> when used.</p> </dd>
         /// </summary>
         /// <doc-id>microsoft.directx_sdk.x3daudio.x3daudio_listener</doc-id>
         /// <unmanaged>OrientTop</unmanaged>
         /// <unmanaged-short>OrientTop</unmanaged-short>
-        public Engine.Mathematics.LinearAlgebra.Vector3 OrientTop;
+        public SharpDX.Vector3 OrientTop;
         /// <summary>
         /// <dd> <p>Position in user-defined world units. This value does not affect <strong>Velocity</strong>.</p> </dd>
         /// </summary>
         /// <doc-id>microsoft.directx_sdk.x3daudio.x3daudio_listener</doc-id>
         /// <unmanaged>Position</unmanaged>
         /// <unmanaged-short>Position</unmanaged-short>
-        public Engine.Mathematics.LinearAlgebra.Vector3 Position;
+        public SharpDX.Vector3 Position;
         /// <summary>
         /// <dd> <p>Velocity vector in user-defined world units per second, used only for doppler calculations. This value does not affect <strong>Position</strong>.</p> </dd>
         /// </summary>
         /// <doc-id>microsoft.directx_sdk.x3daudio.x3daudio_listener</doc-id>
         /// <unmanaged>Velocity</unmanaged>
         /// <unmanaged-short>Velocity</unmanaged-short>
-        public Engine.Mathematics.LinearAlgebra.Vector3 Velocity;
+        public SharpDX.Vector3 Velocity;
         /// <summary>
         /// <dd> <p>Pointer to an <strong><see cref = "SharpDX.X3DAudio.Cone"/></strong> structure for this listener. Providing a listener cone will specify that additional calculations are performed when determining the volume and filter DSP parameters for individual sound sources. A <c>null</c> <strong>pCone</strong> value specifies an omnidirectional sound and no cone processing is applied. <strong>pCone</strong> is only used for matrix, LPF (both direct and reverb paths), and reverb calculations.</p> </dd>
         /// </summary>

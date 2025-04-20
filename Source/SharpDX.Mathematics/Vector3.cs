@@ -43,11 +43,11 @@
 * THE SOFTWARE.
 */
 
-using SharpDX.Mathematics.Interop;
 using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using SharpDX.Mathematics.Interop;
 
 namespace SharpDX
 {
@@ -1217,27 +1217,6 @@ namespace SharpDX
                 ((vector.X * (xz - wy)) + (vector.Y * (yz + wx))) + (vector.Z * ((1.0f - xx) - yy)));
         }
 
-        public static void Transform(ref Engine.Mathematics.LinearAlgebra.Vector3 vector, ref Quaternion rotation, out Vector3 result)
-        {
-            float x = rotation.X + rotation.X;
-            float y = rotation.Y + rotation.Y;
-            float z = rotation.Z + rotation.Z;
-            float wx = rotation.W * x;
-            float wy = rotation.W * y;
-            float wz = rotation.W * z;
-            float xx = rotation.X * x;
-            float xy = rotation.X * y;
-            float xz = rotation.X * z;
-            float yy = rotation.Y * y;
-            float yz = rotation.Y * z;
-            float zz = rotation.Z * z;
-
-            result = new Vector3(
-                ((vector.X * ((1.0f - yy) - zz)) + (vector.Y * (xy - wz))) + (vector.Z * (xz + wy)),
-                ((vector.X * (xy + wz)) + (vector.Y * ((1.0f - xx) - zz))) + (vector.Z * (yz - wx)),
-                ((vector.X * (xz - wy)) + (vector.Y * (yz + wx))) + (vector.Z * ((1.0f - xx) - yy)));
-        }
-
         /// <summary>
         /// Transforms a 3D vector by the given <see cref="Quaternion"/> rotation.
         /// </summary>
@@ -1342,13 +1321,6 @@ namespace SharpDX
             result = (Vector3)intermediate;
         }
 
-        public static void Transform(ref Engine.Mathematics.LinearAlgebra.Vector3 vector, ref Matrix transform, out Engine.Mathematics.LinearAlgebra.Vector3 result)
-        {
-            Vector4 intermediate;
-            Transform(ref vector, ref transform, out intermediate);
-            result = new Engine.Mathematics.LinearAlgebra.Vector3(intermediate.X, intermediate.Y, intermediate.Z);
-        }
-
         /// <summary>
         /// Transforms a 3D vector by the given <see cref="Matrix"/>.
         /// </summary>
@@ -1358,24 +1330,6 @@ namespace SharpDX
         public static void Transform(ref Vector3 vector, ref Matrix transform, out Vector4 result)
         {
             result = new Vector4(
-                (vector.X * transform.M11) + (vector.Y * transform.M21) + (vector.Z * transform.M31) + transform.M41,
-                (vector.X * transform.M12) + (vector.Y * transform.M22) + (vector.Z * transform.M32) + transform.M42,
-                (vector.X * transform.M13) + (vector.Y * transform.M23) + (vector.Z * transform.M33) + transform.M43,
-                (vector.X * transform.M14) + (vector.Y * transform.M24) + (vector.Z * transform.M34) + transform.M44);
-        }
-
-        public static void Transform(ref Engine.Mathematics.LinearAlgebra.Vector3 vector, ref Matrix transform, out Vector4 result)
-        {
-            result = new Vector4(
-                (vector.X * transform.M11) + (vector.Y * transform.M21) + (vector.Z * transform.M31) + transform.M41,
-                (vector.X * transform.M12) + (vector.Y * transform.M22) + (vector.Z * transform.M32) + transform.M42,
-                (vector.X * transform.M13) + (vector.Y * transform.M23) + (vector.Z * transform.M33) + transform.M43,
-                (vector.X * transform.M14) + (vector.Y * transform.M24) + (vector.Z * transform.M34) + transform.M44);
-        }
-
-        public static void Transform(ref Engine.Mathematics.LinearAlgebra.Vector3 vector, ref Matrix transform, out Engine.Mathematics.LinearAlgebra.Vector4 result)
-        {
-            result = new Engine.Mathematics.LinearAlgebra.Vector4(
                 (vector.X * transform.M11) + (vector.Y * transform.M21) + (vector.Z * transform.M31) + transform.M41,
                 (vector.X * transform.M12) + (vector.Y * transform.M22) + (vector.Z * transform.M32) + transform.M42,
                 (vector.X * transform.M13) + (vector.Y * transform.M23) + (vector.Z * transform.M33) + transform.M43,
@@ -1442,17 +1396,6 @@ namespace SharpDX
             result = new Vector3(vector.X * vector.W, vector.Y * vector.W, vector.Z * vector.W);
         }
 
-        public static void TransformCoordinate(ref Engine.Mathematics.LinearAlgebra.Vector3 coordinate, ref Matrix transform, out Engine.Mathematics.LinearAlgebra.Vector3 result)
-        {
-            Vector4 vector = new Vector4();
-            vector.X = (coordinate.X * transform.M11) + (coordinate.Y * transform.M21) + (coordinate.Z * transform.M31) + transform.M41;
-            vector.Y = (coordinate.X * transform.M12) + (coordinate.Y * transform.M22) + (coordinate.Z * transform.M32) + transform.M42;
-            vector.Z = (coordinate.X * transform.M13) + (coordinate.Y * transform.M23) + (coordinate.Z * transform.M33) + transform.M43;
-            vector.W = 1f / ((coordinate.X * transform.M14) + (coordinate.Y * transform.M24) + (coordinate.Z * transform.M34) + transform.M44);
-
-            result = new Engine.Mathematics.LinearAlgebra.Vector3(vector.X * vector.W, vector.Y * vector.W, vector.Z * vector.W);
-        }
-
         /// <summary>
         /// Performs a coordinate transformation using the given <see cref="Matrix"/>.
         /// </summary>
@@ -1470,12 +1413,6 @@ namespace SharpDX
         {
             Vector3 result;
             TransformCoordinate(ref coordinate, ref transform, out result);
-            return result;
-        }
-
-        public static Engine.Mathematics.LinearAlgebra.Vector3 TransformCoordinate(Engine.Mathematics.LinearAlgebra.Vector3 coordinate, Matrix transform)
-        {
-            TransformCoordinate(ref coordinate, ref transform, out var result);
             return result;
         }
 

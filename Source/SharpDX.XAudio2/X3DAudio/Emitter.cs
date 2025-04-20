@@ -34,10 +34,10 @@ namespace SharpDX.X3DAudio
         internal partial struct __Native
         {
             public System.IntPtr ConePointer;
-            public Engine.Mathematics.LinearAlgebra.Vector3 OrientFront;
-            public Engine.Mathematics.LinearAlgebra.Vector3 OrientTop;
-            public Engine.Mathematics.LinearAlgebra.Vector3 Position;
-            public Engine.Mathematics.LinearAlgebra.Vector3 Velocity;
+            public RawVector3 OrientFront;
+            public RawVector3 OrientTop;
+            public RawVector3 Position;
+            public RawVector3 Velocity;
             public float InnerRadius;
             public float InnerRadiusAngle;
             public int ChannelCount;

@@ -33,10 +33,11 @@ namespace SharpDX.XAPO
         public WaveFormat Format { get; set; }
 
         // Internal native struct used for marshalling
-        [StructLayout(LayoutKind.Sequential, Pack = 1 )]
-        internal partial struct __Native {	
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        internal partial struct __Native
+        {
             public IntPtr FormatPointer;
-            public int MaxFrameCount;        
+            public int MaxFrameCount;
             internal unsafe void __MarshalFree()
             {
                 if (FormatPointer != IntPtr.Zero)

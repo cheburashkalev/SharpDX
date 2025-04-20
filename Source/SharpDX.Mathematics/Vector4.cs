@@ -43,11 +43,11 @@
 * THE SOFTWARE.
 */
 
-using SharpDX.Mathematics.Interop;
 using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using SharpDX.Mathematics.Interop;
 
 namespace SharpDX
 {
@@ -145,14 +145,6 @@ namespace SharpDX
         /// <param name="value">A vector containing the values with which to initialize the X, Y, and Z components.</param>
         /// <param name="w">Initial value for the W component of the vector.</param>
         public Vector4(Vector3 value, float w)
-        {
-            X = value.X;
-            Y = value.Y;
-            Z = value.Z;
-            W = w;
-        }
-
-        public Vector4(Engine.Mathematics.LinearAlgebra.Vector3 value, float w)
         {
             X = value.X;
             Y = value.Y;
