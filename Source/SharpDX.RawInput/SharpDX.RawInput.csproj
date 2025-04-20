@@ -4,8 +4,10 @@
     <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <Version>4.2.0.0</Version>
-    <Authors>Alexandre Mutel</Authors>
-    <Company>Alexandre Mutel</Company>
+	<PackageId>SharpDX.RawInput.net8</PackageId>
+	<Authors>Alexandre Mutel, Andrei Levchenko</Authors>
+	<Company>Alexandre Mutel, Andrei Levchenko</Company>
+	<RepositoryUrl>https://github.com/cheburashkalev/SharpDX</RepositoryUrl>
     <Product>SharpDX.RawInput</Product>
     <Copyright>Copyright (c) 2010-2016 Alexandre Mutel</Copyright>
   </PropertyGroup>
